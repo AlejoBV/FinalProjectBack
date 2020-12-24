@@ -149,7 +149,7 @@ exports.activate = async (req, res, next) => {
 
 exports.deactivate = async (req, res, next) => {
     try {
-        const user = await models.Usuario.update({estado:0},
+        const user = await models.Usuario.update({estado:0,rol:"**Sin Rol**"},
                 {
                 where: {
                     id: req.body.id

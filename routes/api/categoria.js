@@ -1,5 +1,6 @@
 const routerx = require('express-promise-router');
 const categoriaController = require ('../../controllers/CategoriaController'); 
+const { verificarAlmacenero } = require('../../middlewares/auth');
 const auth = require('../../middlewares/auth');
 const router = routerx();
 
@@ -10,13 +11,13 @@ const router = routerx();
 //api/categoria/list   [GET]
 router.get('/list', categoriaController.list);
 //api/categoria/add    [POST]
-router.post('/add',auth.verifyUsuario, categoriaController.add);
+router.post('/add',auth.verificarAlmacenero, categoriaController.add);
 //api/categoria/update  [PUT]
-router.put('/update' ,auth.verifyUsuario, categoriaController.update);
+router.put('/update' ,auth.verificarAlmacenero, categoriaController.update);
 //api/categoria/activate [PUT]
-router.put('/activate',auth.verifyUsuario , categoriaController.activate);
+router.put('/activate',auth.verificarAlmacenero , categoriaController.activate);
 //api/categoria/deactivate  [PUT]
-router.put('/deactivate' ,auth.verifyUsuario,categoriaController.deactivate);
+router.put('/deactivate' ,auth.verificarAlmacenero,categoriaController.deactivate);
 
 
 

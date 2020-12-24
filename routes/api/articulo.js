@@ -10,13 +10,13 @@ const router = routerx();
 //api/articulo/list   [GET]
 router.get('/list',articuloController.list); //agregue list*****
 //api/articulo/add    [POST]
-router.post('/add',articuloController.add);
+router.post('/add',auth.verificarVendedor,articuloController.add);
 //api/articulo/update  [PUT]
-router.put('/update',auth.verifyUsuario ,articuloController.update);
+router.put('/update',auth.verificarVendedor ,articuloController.update);
 //api/articulo/activate [PUT]
-router.put('/activate',articuloController.activate);
+router.put('/activate',auth.verificarVendedor,articuloController.activate);
 //api/articulo/deactivate  [PUT]
-router.put('/deactivate',articuloController.deactivate);
+router.put('/deactivate',auth.verificarVendedor,articuloController.deactivate);
 
 
 

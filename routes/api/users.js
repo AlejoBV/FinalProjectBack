@@ -13,15 +13,15 @@ router.post('/login',userController.login);
 
 
 //api/usuario/list   [GET]
-router.get('/list',userController.listar); //agregue list*****
+router.get('/list',auth.verificarAdministrador,userController.listar); //agregue list*****
 //api/usuario/add    [POST]
-router.post('/add', userController.add);
+router.post('/add',auth.verificarAdministrador, userController.add);
 //api/usuario/update  [PUT]
-router.put('/update' , userController.update);
+router.put('/update' ,auth.verificarAdministrador, userController.update);
 //api/usuario/activate [PUT]
-router.put('/activate' , userController.activate);
+router.put('/activate' ,auth.verificarAdministrador, userController.activate);
 //api/usuario/deactivate  [PUT]
-router.put('/deactivate'  ,userController.deactivate);
+router.put('/deactivate' ,auth.verificarAdministrador ,userController.deactivate);
 
 
 

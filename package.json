@@ -4,13 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "test": "cross-env NODE_ENV=test jest  --forceExit --json",
         "start-dev": "node index.js",
-        "start": "node index.js",
         "migrate": "npx sequelize-cli db:migrate",
         "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate && npx sequelize-cli db:seed:all  ",
-        "test": "cross-env NODE_ENV=test jest  --forceExit --json",
         "pretest": "cross-env NODE_ENV=test npm run migrate:reset",
-        "dev": "nodemon index"
+        "dev": "nodemon index",
+        "start": "node index.js",
     },
     "jest": {
         "testEnvironment": "node",

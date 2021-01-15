@@ -20,16 +20,18 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/api', router);
 
-app.set('port', process.env.PORT || 3000);
+//cambio de port por PORT
+app.set('PORT', process.env.PORT || 3000);
 
-if (process.env.NODE_ENV !== 'test') {
-    app.listen(app.get('port'), () => {
-        console.log('Server on port ' + app.get('port') + ' on dev');
-    });
-}
+// if (process.env.NODE_ENV !== 'test') {
+//     app.listen(app.get('port'), () => {
+//         console.log('Server on port ' + app.get('port') + ' on dev');
+//     });
+// }
 
 app.listen(app.get('PORT'), () => {
-    console.log(`Running on http://localhost:${app.get('port')}`)
+    // console.log(`Running on http://localhost:${app.get('port')}`)
+    console.log('server up');
 })
 
 

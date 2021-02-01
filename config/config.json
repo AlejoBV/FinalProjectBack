@@ -13,7 +13,10 @@
         "storage": "./database.sqlite3"
     },
     "production": {
-        "dialect": "sqlite",
-        "storage": "./database.sqlite3"
+        "username": "TNmosZYbOq",
+        "password": "Jn2g1cuRYg",
+        "database": "TNmosZYbOq",
+        "host": "remotemysql.com",
+        "dialect": "mysql"
     }
 }
